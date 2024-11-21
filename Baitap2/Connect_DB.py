@@ -10,7 +10,7 @@ class LoginApp:
         self.win = win
         self.win.title("Login")
 
-        IMG_PATH = "background.jpg"
+        IMG_PATH = "Baitap2/background.jpg"
         self.WIDTH, self.HEIGHT = 500, 400
 
         #Cài đặt kích thước tối thiểu cho cửa sổ
@@ -76,7 +76,7 @@ class LoginApp:
     def show_loading_screen(self):
         self.win.destroy()
         main_window = tk.Tk()
-        main_window.iconbitmap("lego.ico")
+        main_window.iconbitmap("Baitap2/lego.ico")
         app = LoadingScreen(main_window)
         main_window.mainloop()
 
@@ -87,7 +87,7 @@ class LoadingScreen:
         self.win.geometry("500x400")
         self.win.configure(bg="#333")
 
-        self.bg_image = Image.open("OIP.jpg")
+        self.bg_image = Image.open("Baitap2/OIP.jpg")
         self.bg_photo = ImageTk.PhotoImage(self.bg_image.resize((500, 400)))
 
         self.bg_label = tk.Label(self.win, image=self.bg_photo)
@@ -118,7 +118,7 @@ class LoadingScreen:
         self.win.destroy()
         main_window = tk.Tk()
         main_window.title("Main Application")
-        main_window.iconbitmap("lego.ico")
+        main_window.iconbitmap("Baitap2/lego.ico")
         app = DatabaseApp(main_window)
         main_window.mainloop()
 
@@ -370,6 +370,6 @@ class DatabaseApp:
 
 if __name__ == "__main__":
     win = tk.Tk()
-    win.iconbitmap("lego.ico")
+    win.iconbitmap("Baitap2/lego.ico")
     app = LoginApp(win)
     win.mainloop()
