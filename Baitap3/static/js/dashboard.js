@@ -3,23 +3,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const legoSetForm = document.getElementById("legoSetForm");
     const legoSetsTable = document.getElementById("legoSetsTable");
 
-    // Add Theme
+    // Thêm chủ đề
     themeForm.onsubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(themeForm);
         const response = await fetch("/add_theme", { method: "POST", body: formData });
-        if (response.ok) location.reload();  // Reload dashboard after adding a theme
+        if (response.ok) location.reload();  // Tải lại giao diện sau khi thêm chủ đề
     };
 
-    // Add Lego Set
+    // Thêm thông tin về bộ LEGO
     legoSetForm.onsubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(legoSetForm);
         const response = await fetch("/add_legoset", { method: "POST", body: formData });
-        if (response.ok) location.reload();  // Reload dashboard after adding a LEGO set
+        if (response.ok) location.reload();  // Tải lại giao diện sau khi thêm thông tin về bộ LEGO
     };
 
-    // Edit Theme
+    // Chỉnh sửa chủ đề
     window.editTheme = async (oldTheme) => {
         const newTheme = prompt("Enter the new name for the theme:", oldTheme);
         if (newTheme && newTheme !== oldTheme) {
@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
             formData.append('new_theme', newTheme);
 
             const response = await fetch("/edit_theme", { method: "POST", body: formData });
-            if (response.ok) location.reload();  // Reload dashboard after editing a theme
+            if (response.ok) location.reload();  // Tải lại giao diện sau khi chỉnh sửa chủ đề
         }
     };
 
-    // Edit Lego Set
+    // Chỉnh sửa thông tin về bộ LEGO
     window.editLegoSet = async (id, currentTheme, currentName) => {
         const newTheme = prompt("Enter the new theme:", currentTheme) || currentTheme;
         const newName = prompt("Enter the new name:", currentName) || currentName;
@@ -43,30 +43,30 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append('lego_name', newName);
 
         const response = await fetch("/edit_lego", { method: "POST", body: formData });
-        if (response.ok) location.reload();  // Reload dashboard after editing a LEGO set
+        if (response.ok) location.reload();  // Tải lại giao diện sau khi chỉnh sửa thông tin về bộ LEGO
     };
 
-    // Delete Theme
+    // Xóa chủ đề
     window.deleteTheme = async (theme) => {
         if (confirm(`Are you sure you want to delete the theme: ${theme}?`)) {
             const formData = new FormData();
             formData.append('theme', theme);
             const response = await fetch("/delete_theme", { method: "POST", body: formData });
-            if (response.ok) location.reload();  // Reload dashboard after deleting a theme
+            if (response.ok) location.reload();  // Tải lại giao diện sau khi xóa chủ đề
         }
     };
 
-    // Delete Lego Set
+    // Xóa thông tin về bộ LEGO
     window.deleteLegoSet = async (id) => {
         if (confirm("Are you sure you want to delete this LEGO set?")) {
             const formData = new FormData();
             formData.append('lego_id', id);
             const response = await fetch("/delete_lego", { method: "POST", body: formData });
-            if (response.ok) location.reload();  // Reload dashboard after deleting a LEGO set
+            if (response.ok) location.reload();  // Tải lại giao diện sau khi xóa thông tin về bộ LEGO
         }
     };
 
-    // Load Lego Sets with Sorting
+    // Tải dữ liệu về bộ LEGO theo chức năng lọc
     async function loadLegoSets(column = "name", order = "asc") {
         const response = await fetch(`/legosets?sort_column=${column}&sort_order=${order}`);
         const data = await response.json();
@@ -85,6 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
         legoSetsTable.querySelector("tbody").innerHTML = html;
     }
 
-    // Initial load of LEGO sets
+    // Khởi tạo
     loadLegoSets();
 });
