@@ -5,7 +5,7 @@ from tkinter import Menu, ttk
 win = tk.Tk()
 
 win.title("Converter")
-win.iconbitmap('convert.ico')
+win.iconbitmap('Baitap1/convert.ico')
 
 tabControl = ttk.Notebook(win)
 tab1 = ttk.Frame(tabControl)
