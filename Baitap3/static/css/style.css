@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: #DC3545;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.cancel-btn {
+    background-color: #DC3545;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+}
+
+.save-btn {
+    background-color: #35dc3d;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.save-btn:hover {
+    background-color: #23c82b;
+}
+
+.logout-button {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red text */
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    border: 1px solid #f5c6cb;
+}
+
+.logout-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+    color: white;
+}

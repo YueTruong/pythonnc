@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="icon" href="{{ url_for('static', filename='lego.ico') }}">
+    <style>
+        body {
+            background: url('{{ url_for("static", filename="img/OIP.jpg") }}') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #201d48;
+            text-align: center;
+        }
+    </style>
+    <meta http-equiv="refresh" content="2;url={{ url_for('main') }}">
+</head>
+<body>
+    <h1>Loading...</h1>
+</body>
+</html>
